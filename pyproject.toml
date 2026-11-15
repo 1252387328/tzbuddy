@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tzbuddy"
+version = "0.1.0"
+description = "Time zones for humans: convert a time across cities, see everyone's clock, and find meeting slots that work. Standard library only."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = ["tzdata; platform_system == 'Windows'"]
+keywords = ["timezone", "time", "meeting", "cli", "zoneinfo", "remote-work"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+]
+
+[project.scripts]
+tzbuddy = "tzbuddy.cli:main"
+
+[tool.setuptools]
+packages = ["tzbuddy"]
